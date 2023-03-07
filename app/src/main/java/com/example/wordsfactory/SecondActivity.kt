@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.example.wordsfactory.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
@@ -29,6 +30,12 @@ class SecondActivity : AppCompatActivity() {
     private fun dialogCreate() {
         var dialog= Dialog(this)
         dialog.setContentView(R.layout.dialog)
+        dialog.show()
+
+        val okBtn = dialog.findViewById(R.id.okBtn) as Button
+        okBtn.setOnClickListener {
+            dialog.dismiss()
+        }
     }
 
     private fun isEmptyText()
