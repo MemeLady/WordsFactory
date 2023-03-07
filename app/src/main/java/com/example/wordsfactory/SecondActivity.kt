@@ -19,6 +19,7 @@ class SecondActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener {
             val intent = Intent(this, FirstActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.signupBtn.setOnClickListener {
@@ -48,6 +49,7 @@ class SecondActivity : AppCompatActivity() {
         else{
             val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

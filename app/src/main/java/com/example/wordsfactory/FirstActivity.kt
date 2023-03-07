@@ -33,6 +33,7 @@ class FirstActivity : AppCompatActivity() {
     {
         val intent = Intent(this, SecondActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
