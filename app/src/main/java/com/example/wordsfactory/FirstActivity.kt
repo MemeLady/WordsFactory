@@ -1,5 +1,6 @@
 package com.example.wordsfactory
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
@@ -15,6 +16,9 @@ class FirstActivity : AppCompatActivity() {
 
             if(position==PageLists.introSlides.size-1){
                 binding?.controllerBtn?.text="Let's Start"
+                binding?.controllerBtn?.setOnClickListener {
+                    nextActivity()
+                }
             }
             else{
                 binding?.controllerBtn?.text="Next"
@@ -24,11 +28,23 @@ class FirstActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun nextActivity()
+    {
+        val intent = Intent(this, SecondActivity::class.java)
+        startActivity(intent)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityFirstBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         setupViewPager(binding!!)
+
+        binding!!.skipBtn.setOnClickListener {
+            nextActivity()
+        }
+
     }
 
     private fun setupViewPager(binding: ActivityFirstBinding){
