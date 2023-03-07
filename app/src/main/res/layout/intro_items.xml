@@ -47,6 +47,6 @@
         app:layout_constraintTop_toBottomOf="@+id/titleTv"
         android:textColor="#78746D"
         android:textFontWeight="400"
-        android:textSize="14dp"/>
+        android:textSize="14sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

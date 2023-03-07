@@ -50,7 +50,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/rubik_medium"
             android:textColor="#78746D"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editTextName"
@@ -64,7 +64,7 @@
             android:inputType="textPersonName"
             android:paddingLeft="15dp"
             android:textColorHint="#78746D"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editTextTextEmail"
@@ -78,19 +78,24 @@
             android:inputType="textEmailAddress"
             android:paddingLeft="15dp"
             android:textColorHint="#78746D"
-            android:textSize="14dp" />
+            android:textColorLink="#78746D"
+            android:textSize="14sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
             app:passwordToggleEnabled="true"
-            app:passwordToggleDrawable="@drawable/new_eye_password_icon">
+            app:hintEnabled="false"
+            app:passwordToggleDrawable="@drawable/new_eye_password_icon"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp" >
 
         <EditText
             android:id="@+id/editTextTextPassword"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:paddingTop="15dp"
             android:background="@drawable/edit_text_style"
             android:ems="10"
             android:fontFamily="@font/rubik_medium"
@@ -98,7 +103,7 @@
             android:inputType="textPassword"
             android:paddingLeft="15dp"
             android:textColorHint="#78746D"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,7 +127,7 @@
             android:text="Log in"
             android:textAllCaps="false"
             android:textColor="#78746D"
-            android:textSize="14dp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>

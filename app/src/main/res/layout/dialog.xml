@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rubik_medium"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:text="Ok"
             app:backgroundTint="#E3562A"
             app:cornerRadius="15dp"/>
