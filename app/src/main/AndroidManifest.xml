@@ -21,10 +21,6 @@
             android:name=".FirstActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_intro1"
-            android:exported="false"
-            android:label="Intro1" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
