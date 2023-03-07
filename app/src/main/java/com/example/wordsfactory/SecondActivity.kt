@@ -1,5 +1,6 @@
 package com.example.wordsfactory
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,29 @@ class SecondActivity : AppCompatActivity() {
 
         binding.backBtn.setOnClickListener {
             val intent = Intent(this, FirstActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.signupBtn.setOnClickListener {
+            isEmptyText()
+        }
+
+    }
+
+    private fun dialogCreate() {
+        var dialog= Dialog(this)
+        dialog.setContentView(R.layout.dialog)
+    }
+
+    private fun isEmptyText()
+    {
+        if (binding.editTextName.getText().toString().equals("") ||
+            binding.editTextTextEmail.getText().toString().equals("") ||
+            binding.editTextTextPassword.getText().toString().equals("")) {
+            dialogCreate()
+        }
+        else{
+            val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
         }
     }

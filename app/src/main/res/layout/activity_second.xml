@@ -53,7 +53,7 @@
             android:textSize="14dp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editTextName"
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
@@ -67,7 +67,7 @@
             android:textSize="14dp" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/editTextTextEmail"
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
@@ -95,14 +95,15 @@
             android:textSize="14dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/signupBtn"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/rubik_medium"
             android:text="Sign up"
+            android:textAllCaps="false"
             android:textSize="16dp"
             app:backgroundTint="#E3562A"
-            android:textAllCaps="false"
             app:cornerRadius="15dp" />
 
         <Button
