@@ -18,8 +18,7 @@
            android:layout_height="60dp"
            app:hintEnabled="false"
            app:boxStrokeWidth="0dp"
-           app:boxStrokeWidthFocused="0dp"
-           android:layout_marginTop="15dp">
+           app:boxStrokeWidthFocused="0dp">
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -196,7 +195,7 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="350dp"
             android:layout_height="70dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="@font/rubik_medium"
             android:text="Add to Dictionary"
             android:textSize="16dp"
