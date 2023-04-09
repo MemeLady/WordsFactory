@@ -43,6 +43,9 @@ class HomeFragment : Fragment() {
 
 
 
+
+
+
         val service=retrofit.create(DictionaryApi::class.java)
         lifecycleScope.launch (Dispatchers.IO){
             var result=service.getWordMeaning("cat")
@@ -60,6 +63,9 @@ class HomeFragment : Fragment() {
 
         val value=sharedPreferences?.getString("my_name","")!!
         Log.d("MainActivity",value)
+
+
+
 
 
 
