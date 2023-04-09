@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.wordsfactory.DictionaryApi
+import com.example.wordsfactory.MeaningItemsAdapter
 import com.example.wordsfactory.ThirdActivity
 import com.example.wordsfactory.databinding.FragmentHomeBinding
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    private lateinit var meaningItemsAdapter: MeaningItemsAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
