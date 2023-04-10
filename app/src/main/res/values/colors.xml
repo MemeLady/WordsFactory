@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dots_color">#D5D4D4</color>
+    <color name="blue">#65AAEA</color>
 </resources>

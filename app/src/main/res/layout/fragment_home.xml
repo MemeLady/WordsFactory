@@ -6,202 +6,162 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center" >
-
-       <com.google.android.material.textfield.TextInputLayout
-           android:layout_width="350dp"
-           android:layout_height="60dp"
-           app:hintEnabled="false"
-           app:boxStrokeWidth="0dp"
-           app:boxStrokeWidthFocused="0dp">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextTextSearch"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="56dp"
             android:background="@drawable/edit_text_style"
-            android:ems="10"
-            android:fontFamily="@font/rubik_medium"
-            android:hint="Cooking"
-            android:inputType="textPersonName"
-            android:paddingLeft="15dp"
-            android:paddingTop="15dp"
-            android:textColorHint="#78746D"
-            android:textSize="14sp"/>
+            android:fontFamily="@font/rubik_light"
+            android:inputType="text"
+            android:padding="16dp"
+            android:hint="Dictionary"
+            android:textFontWeight="400"
+            android:textSize="14sp" />
 
-           <ImageButton
-               android:layout_width="40dp"
-               android:layout_height="40dp"
-               android:src="@drawable/loupe"
-               android:layout_marginTop="-50dp"
-               android:layout_marginLeft="300dp"
-               android:background="@android:color/transparent" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-       </com.google.android.material.textfield.TextInputLayout>
+    <ImageButton
+        android:id="@+id/searchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/loupe"
+        android:src="@drawable/loupe"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout2"/>
 
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowWordAndSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:flow_horizontalGap="16dp"
+        app:constraint_referenced_ids="textWord, textTranscription, imageSound"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:flow_horizontalBias="0" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/rubik_medium"
-                android:text="Cooking"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:textColor="#000000"
+        android:lineHeight="32dp"
+        android:textFontWeight="500"
+        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textTranscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:textColor="#E3562A"
+        android:lineHeight="32dp"
+        android:textFontWeight="400"
+        android:textSize="14sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@+id/textWord"
+        app:layout_constraintTop_toTopOf="@+id/textWord"/>
+    <ImageButton
+        android:id="@+id/imageSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:contentDescription="[ˈkʊkɪŋ]"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="87dp"
+        app:layout_constraintStart_toStartOf="@+id/textTranscription"
+        app:layout_constraintTop_toTopOf="@+id/textWord" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/rubik_medium"
-                android:text="[ˈkʊkɪŋ]"
-                android:textColor="#E3562A"
-                android:textSize="14sp" />
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowPartOfSpeech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:flow_horizontalGap="16dp"
+        app:constraint_referenced_ids="titleTextPartOfSpeech, textPartOfSpeech"
+        app:layout_constraintTop_toBottomOf="@id/flowWordAndSound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:flow_horizontalBias="0"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/sound" />
+    <TextView
+        android:id="@+id/titleTextPartOfSpeech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:textColor="#000000"
+        android:lineHeight="26dp"
+        android:textFontWeight="500"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/textPartOfSpeech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_medium"
+        android:textColor="#000000"
+        android:lineHeight="21dp"
+        android:textFontWeight="400"
+        android:textSize="14sp"
+        android:gravity="center" />
 
-        </LinearLayout>
+    <TextView
+        android:id="@+id/textMeanings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/rubik_medium"
+        android:lineHeight="26dp"
+        android:textColor="#000000"
+        android:textFontWeight="500"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flowPartOfSpeech"/>
 
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMeanings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/dictionaryBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMeanings"
+        tools:listitem="@layout/meanings_items" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/rubik_medium"
-                android:text="Part of Speech:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="21dp"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/rubik_medium"
-                android:text="Noun"
-                android:textColor="#000000"
-                android:textSize="14sp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dictionaryBtn"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Add to Dictionary"
+        android:textAllCaps="false"
+        android:textSize="16dp"
+        app:backgroundTint="#E3562A"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="76dp" />
 
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rubik_medium"
-            android:text="Meanings:"
-            android:textColor="#000000"
-            android:layout_marginTop="15dp"
-            android:textSize="20sp" />
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="vertical"
-            android:background="@drawable/edit_text_style">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:textSize="14sp"
-                android:fontFamily="@font/rubik_medium"
-                android:textColor="#000000"
-                android:text="The practice or skill of preparing food by \ncombining, mixing, and heating ingredients."/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Example: "
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/rubik_medium"
-                    android:textColor="#65AAEA"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="he developed an interest in cooking. "
-                    android:fontFamily="@font/rubik_medium"
-                    android:textColor="#000000" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="vertical"
-            android:background="@drawable/edit_text_style">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:textSize="14sp"
-                android:fontFamily="@font/rubik_medium"
-                android:textColor="#000000"
-                android:text="The practice or skill of preparing food by \ncombining, mixing, and heating ingredients."/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Example: "
-                    android:layout_marginLeft="15dp"
-                    android:fontFamily="@font/rubik_medium"
-                    android:textColor="#65AAEA"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="he developed an interest in cooking. "
-                    android:fontFamily="@font/rubik_medium"
-                    android:textColor="#000000" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="350dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="90dp"
-            android:fontFamily="@font/rubik_medium"
-            android:text="Add to Dictionary"
-            android:textSize="16dp"
-            app:backgroundTint="#E3562A"
-            android:textAllCaps="false"
-            app:cornerRadius="15dp" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
