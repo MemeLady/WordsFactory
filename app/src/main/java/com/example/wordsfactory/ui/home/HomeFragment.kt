@@ -145,7 +145,7 @@ class HomeFragment : Fragment() {
         binding.dictionaryBtn.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO){
                 val saveWord=database.wordDao().findWord(word)
-                if(saveWord!==null)
+                if(saveWord!=null)
                 {
                     withContext(Dispatchers.Main) {
                         dialogCreate("Word has been added to the dictionary")

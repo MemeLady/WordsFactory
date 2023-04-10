@@ -35,7 +35,7 @@ class MeaningItemsAdapter(private val meaningsItems: List<Definitions>):Recycler
 
         fun bind(meaning: Definitions) {
             if(meaning.example==null){
-                text = "Example"
+                text = "Example: "
             }
             else{
                 text = "Example: "+meaning.example
