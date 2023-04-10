@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wordsfactory.databinding.MeaningsItemsBinding
 
 
-class MeaningItemsAdapter(private val meaningsItem: List<Definitions>):RecyclerView.Adapter<MeaningItemsAdapter.MeaningItemViewHolder>() {
+class MeaningItemsAdapter(private val meaningsItems: List<Definitions>):RecyclerView.Adapter<MeaningItemsAdapter.MeaningItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MeaningItemViewHolder {
         return MeaningItemViewHolder(
@@ -21,25 +21,24 @@ class MeaningItemsAdapter(private val meaningsItem: List<Definitions>):RecyclerV
     }
 
     override fun getItemCount(): Int {
-        return meaningsItem.size
+        return meaningsItems.size
     }
 
     override fun onBindViewHolder(holder: MeaningItemViewHolder, position: Int) {
-        holder.bind(meaningsItem[position])
+        holder.bind(meaningsItems[position])
     }
     inner class MeaningItemViewHolder(view: View):RecyclerView.ViewHolder(view){
         private val viewBinding=MeaningsItemsBinding.bind(view)
         private var text=""
         private var spannableString=SpannableString("")
-        private val foregroundColorSpanCyan=ForegroundColorSpan(ContextCompat.getColor(view.context,
-            androidx.appcompat.R.color.material_blue_grey_950))
+        private val foregroundColorSpanCyan = ForegroundColorSpan(ContextCompat.getColor(view.context, R.color.blue))
 
         fun bind(meaning: Definitions) {
             if(meaning.example==null){
-                text="Example"
+                text = "Example"
             }
             else{
-                text="Example: "+meaning.example
+                text = "Example: "+meaning.example
             }
             spannableString= SpannableString(text)
             spannableString.setSpan(foregroundColorSpanCyan,0,8,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)

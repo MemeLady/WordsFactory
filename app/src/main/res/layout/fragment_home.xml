@@ -28,7 +28,7 @@
             android:fontFamily="@font/rubik_light"
             android:inputType="text"
             android:padding="16dp"
-            android:text="Dictionary"
+            android:hint="Dictionary"
             android:textFontWeight="400"
             android:textSize="14sp" />
 
